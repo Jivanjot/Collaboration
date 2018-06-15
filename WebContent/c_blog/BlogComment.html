@@ -1,6 +1,30 @@
 <div class="container" ng-Controller="BlogCommentController">
 
+	<h3 class="well">
+		<font face="Monotype Corsiva">Blog Comments</font>
+	</h3>
+	<div class="row">
 
+		<table>
+
+			<tr>
+				<td>{{blogData.blogName}}</td>
+				<td>{{blogData.blogComment}}</td>
+			</tr>
+		</table>
+
+<table>
+      <tr ng-repeat="blogComment in blogCommentData">
+      <td>{{blogComment.commentText}}</td>
+      <td>{{blogComment.loginName}}</td>
+      <td>{{blogComment.commentDate}}</td>
+      </tr>
+
+</table>
+
+
+
+	</div>
 
 
 </div>

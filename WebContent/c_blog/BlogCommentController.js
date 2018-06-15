@@ -16,7 +16,11 @@ myApp.controller("BlogCommentController",function($scope,$http,$rootScope,$locat
 	
 	function myBlog()
 	{
-		
+		$http.get(""+$rootScope.blogId)
+		.then(function(response)
+				{
+			$scope.blogData=response.data;
+				});
 	}
 	
 	myyBlog();

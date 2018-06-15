@@ -1,0 +1,30 @@
+<div class="container" ng-Controller="FriendController">
+
+	<h1 class="well">
+		<center>
+			<font face="Monotype Corsiva">Suggested Friends</font>
+		</center>
+	</h1>
+
+	<table class="table">
+		<tr>
+			<td>Serial no #</td>
+			<td>Friend Name</td>
+		
+			<td></td>
+		</tr>
+		<br>
+		<tr ng-repeat="friend in showSuggestedFriend">
+			<td></td>
+			<td>{{friend.name}}</td>
+			
+			<td><button class="btn btn-info" ng-click="sendFriendRequest(friend.loginName)">Send request</button></td>
+		</tr>
+
+	</table>
+
+
+
+
+
+</div>

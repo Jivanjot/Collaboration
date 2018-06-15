@@ -6,12 +6,22 @@
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+
 <script src="RouteConfig.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
+
 <script src="c_user/UserController.js"></script>
 <script src="c_blog/BlogController.js"></script>
 <script src="c_blog/BlogCommentController.js"></script>
 <script src="c_forum/ForumController.js"></script>
-<!-- <script src="c_user/UserController.js"></script> -->
+<script src="c_friend/FriendController.js"></script>
+<script src="c_chat/ChatController.js"></script>
+ <script src="c_chat/ChatService.js"></script> 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -31,22 +41,24 @@
 				</div>
 				<ul class="nav navbar-nav">
 					<li><a href="#/">HOME</a></li>
-					<li><a href="#/login">LOGIN</a></li>
-					<li><a href="#/register">REGISTER</a></li>
+					<li ng-show="currentUser==undefined"><a href="#/login">LOGIN</a></li>
+					<li  ng-show="currentUser==undefined"><a href="#/register">REGISTER</a></li>
+					<li ng-hide="currentUser==undefined"><a href="#/uploadImage">Upload image</a></li>
 					<li><a href="#/aboutus">ABOUT US</a></li>
 					<li><a href="#/contactus">CONTACT US</a></li>
+					<li ng-hide="currentUser==undefined"><a href="#/chat">Chat Room</a></li>
 
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Blog<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li
-								ng-hide="currentUser==undefined||currentUser.role=='Admin'"><a
+								ng-hide="currentUser==undefined"><a
 								href="#/blog">Add Blog</a></li>
 							<li><a href="#/showBlog">Show Blog</a>
 							<li
 								ng-hide="currentUser==undefined ||currentUser.role=='User'"><a
-								href="#/AdminBlog">Admin Blog</a>
+								href="#/adminBlog">Admin Blog</a>
 							<li
 								ng-hide="currentUser==undefined||currentUser.role=='Admin'"><a
 								href="#/myBlog">My Blog</a>
@@ -56,21 +68,35 @@
 						<ul class="dropdown-menu">
 							<li><a href="#/AddForum">Add Forum</a></li>
 							<li><a href="#/ShowForum">Show Forum</a></li>
+						    <li ng-show="currentUser.role=='Admin'"><a href="#/AdminForum">Admin Forum</a></li>
 						</ul></li>
+						
+						<li class="dropdown" ng-hide="currentUser==undefined"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#">Friend<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#/showFriendList">Friend List</a></li>
+							<li><a href="#/showPendingFriendRequest">Pending requests</a></li>
+						    <li><a href="#/showSuggestedFriend">Show suggested users</a></li>
+						
+						</ul></li>
+						
+						
+						
+						
 				</ul>
 				<div class="nav navbar-nav navbar-right"
 					ng-hide="currentUser==undefined">
 					<font color="white" face="calibri" size='2'>Welcome:{{currentUser.name}}</font>
+					{{image}}
 					<form ng-controller="UserController">
-						<input type="submit" value="Logout" class="btn btn-info"
-							ng-submit="logout()" />
+						<button type="button" ng-click="logout()" class="btn btn-lg btn-danger">Logout</button>
 					</form>
 				</div>
 
 			</div>
 		</nav>
 
-		<div ng-view></div>
+		<div ng-view></div> 
 
 
 	</div>
