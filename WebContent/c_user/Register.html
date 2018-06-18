@@ -1,46 +1,48 @@
 <div class="container" ng-Controller="UserController">
 
- <h1 class="well"><center><font face="Monotype Corsiva">Registration Form</font></center></h1>
-	<div class="col-lg-12 well">
-	<div class="row">
-	
-				<form>
-					<div class="col-sm-12">
-						<div class="row">
-					
-							<div class="col-sm-6 form-group">
-								<label>Login Name</label>
-								<input type="text" name="logiNname" ng-model="User.loginName"  placeholder="Enter User Name Here.." class="form-control">
-							</div>
-							<div class="col-sm-6 form-group">
-								<label>Password </label>
-								<input type="password" name="password" ng-model="User.password" placeholder="Enter Password Here.." class="form-control">
-							</div>
-						</div>					
-						<div class="form-group">
-							<label>Address</label>
-							<textarea name="address" ng-model="User.address" placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
-						</div>	
-				
-						<div class="form-group">
-								<label>User Name</label>
-								<input type="text" name="name" ng-model="User.name" placeholder="Enter Your Name Here.." class="form-control">
-						</div>	
-				
-						
-					<div class="form-group">
-						<label>Mobile Number</label>
-						<input type="text" name="mobile" ng-model="User.mobile" placeholder="Enter Mobile Number Here.." class="form-control">
-					</div>		
-					
-					<div class="form-group">
-						<label>Email Address</label>
-						<input type="text" name="email" ng-model="User.email" placeholder="Enter Email Address Here.." class="form-control">
-					</div>	
-					<div>
-					<button type="button" ng-click="register()" class="btn btn-lg btn-info">Submit</button>					
-					</div>
-				</form> 
-		</div>
-	</div>
-	</div>
+
+<form>
+ <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+            <h4>Registration</h4>
+            <input type="text" id="loginName"  ng-model="User.loginName" class="form-control input-sm chat-input" placeholder="Login Name" />
+            </br>
+            <input type="text" id="password" ng-model="User.password" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+              <input type="text" id="address" ng-model="User.address" class="form-control input-sm chat-input" placeholder="Address" />
+            </br>
+              <input type="text" id="name" ng-model="User.name" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+              <input type="text" id="mobile" ng-model="User.mobile" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+              <input type="text" id="email" ng-model="User.email" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+            
+            
+            
+            <div class="wrapper">
+            <span class="group-btn">     
+                
+            <button type="button" ng-click="register()" class="btn btn-lg btn-info">Register<i class="fa fa-sign-in"></i></button>
+            </span>
+            </div>
+            </div>
+        
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+</div>

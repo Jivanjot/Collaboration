@@ -1,22 +1,30 @@
-<div class="container" ng-Controller="BlogController">
 
- <h1 class="well"><center><font face="Monotype Corsiva">Admin blog</font></center></h1>
+<div class="container"  style="align-self: center;"       ng-Controller="BlogController">
+
+ <h1 class="well"><center><font face="Monotype Corsiva">Admin blogs</font></center></h1>
+  <br>
   
-  <div ng-repeat="blog in allBlogData">
   
   
-  		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{blog.blogId}}">{{blog.blogName}}</button>
-		
-		<div class="collapse">
-    			{{blog.blogContent}}
-  		</div>
-		
-		<button ng-show="blog.status=='NA'" type="button" class="btn btn-info" ng-click="approve(blog.blogId)">Approve</button>
+  <div  ng-repeat="blog in allBlogData">
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{blog.blogId}}" style="width: 10%;" ><h4>{{blog.blogName}}</h4></button>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+
+ {{blog.blogContent}}&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  
+  
+  
+  {{blog.likes}}&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  <button ng-show="blog.status=='NA'" type="button" class="btn btn-info" ng-click="approve(blog.blogId)">Approve</button>
 		<button ng-show="blog.status=='A'" type="button" class="btn btn-info" ng-click="reject(blog.blogId)">reject</button>
   		
+  
+  
+  
+  <br><br>
+  
+    </div>
   </div>
-  
-  
-  
-  
-</div>

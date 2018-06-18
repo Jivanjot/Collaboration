@@ -1,27 +1,25 @@
-<div class="container" ng-Controller="forumController">
+<div class="container"  style="align-self: center;"       ng-Controller="forumController">
 
-	<h1 class="well">
-		<center>
-			<font face="Monotype Corsiva">Forum Detail</font>
-		</center>
-	</h1>
-
-	<div id="myblog" ng-repeat="forum in listForumData">
-		<button type="button" class="btn btn-info" data-toggle="collapse"
-			data-target="#{{forum.forumId}}">{{forum.forumName}}</button>
-		{{forum.likes}}
-		<button class="btn btn-info" ng-show="forum.status=='A'" ng-click="incLikes(forum.forumId)">Likes</button>
-		<button ng-show="forum.status=='NA'" class="btn btn-info" ng-click="approveForum(forum.forumId)">Approve</button>
+<h1 class="well"><center><font face="Monotype Corsiva">Admin forums</font></center></h1>
+  <br>
+  
+  
+  
+  <div  ng-repeat="forum in listForumData">
+ 
+  &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{forum.forumId}}" style="width: 10%;" ><h4>{{forum.forumName}}</h4></button>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  
+ 
+  
+  {{forum.likes}}&nbsp;&nbsp;&nbsp;&nbsp;
+	<button ng-show="forum.status=='NA'" class="btn btn-info" ng-click="approveForum(forum.forumId)">Approve</button>&nbsp;&nbsp;&nbsp;&nbsp;
 		<button ng-show="forum.status=='A'"  class="btn btn-info" ng-click="rejectForum(forum.forumId)">Reject</button>
 
-
-		<!-- <button type="button" class="btn btn-info"
-			ng-click="blogComment(blog.blogId)">Forum Discussion</button>
-		<div id="{{forum.forumId}}" class="collapse">
-			{{blog.blogContent}}</div>-->
-			
-	</div> 
-
-
-
-</div>
+  
+  
+  
+  <br><br>
+  
+    </div>
+  </div>

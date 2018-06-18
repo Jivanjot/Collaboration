@@ -8,12 +8,14 @@
 
 	<table class="table">
 		<tr>
-			<td>Serial no</td>
+			<td>Friend id</td>
 			<td>Friend Name</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<br>
 		<tr ng-repeat="friend in showPendingFriendRequest">
-			<td></td>
+			<td>{{friend.friendId}}</td>
 			<td>{{friend.loginName}}</td>
 	<td><button class="btn btn-info" ng-click="acceptFriendRequest(friend.friendId)">Accept request</button></td>
 	<td><button class="btn btn-info" ng-click="unfriend(friend.friendId)">Delete request</button></td>

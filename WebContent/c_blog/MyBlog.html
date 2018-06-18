@@ -1,22 +1,26 @@
+
 <div class="container" ng-Controller="BlogController">
 
  <h1 class="well"><center><font face="Monotype Corsiva">Blog Detail</font></center></h1>
+  <br>
   
-  <div ng-repeat="blog in allBlogData">
   
+  
+  <div  ng-repeat="blog in allBlogData">
   <div ng-show="currentUser.loginName==blog.loginName">
-  		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{blog.blogId}}">{{blog.blogName}}</button>
-		
-		<div class="collapse">
-    			{{blog.blogContent}}
-  		</div>
-		
-		<button type="button" class="btn btn-danger" ng-click="deleteBlog(blog.blogId)">Delete</button>
-		
-  		
-  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{blog.blogId}}" style="width: 10%;" ><h4>{{blog.blogName}}</h4></button>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+
+ {{blog.blogContent}}&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  
+  
+  
+  {{blog.likes}}&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  
+  <button type="button" class="btn btn-danger" ng-click="deleteBlog(blog.blogId)">Delete</button>
   <br><br>
-  </div>
   
-  
-</div>
+    </div>
+  </div></div>

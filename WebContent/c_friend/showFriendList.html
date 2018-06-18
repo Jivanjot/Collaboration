@@ -8,12 +8,12 @@
 
 	<table class="table">
 		<tr>
-			<td>Serial </td>
+			<td>Id </td>
 			<td>Friend Name</td>
 		</tr>
 		<br>
 		<tr ng-repeat="friend in showFriendList">
-			<td></td>
+			<td>{{friend.friendId}}</td>
 			<td>{{friend.friendLoginName}}</td>
 			<td><button class="btn btn-info" ng-click="unfriend(friend.friendId)">Remove Friend</button>   </td>
 		</tr>

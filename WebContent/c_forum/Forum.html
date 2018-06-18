@@ -1,28 +1,24 @@
 <div class="container" ng-Controller="forumController">
 
-<h1 class="well"><center><font face="Monotype Corsiva">Forum Detail</font></center></h1>
-	<div class="col-lg-12 well">
-	<div class="row">
-				<form>
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-6 form-group">
-								<label>Forum Name</label>
-								<input type="text" name="forumname" ng-model="forum.forumName"  placeholder="Enter Forum Name Here.." class="form-control">
-							</div>
-						 </div>
-						 <div class="row">
-							<div class="col-sm-6 form-group">
-								<label>Forum Content </label>
-								<textarea name="forumContent" cols="60" rows="10" ng-model="forum.forumContent" placeholder="Enter Forum Content Here.." class="form-control"></textarea>
-							</div>
-						</div>	
-					<div>
-					<button type="button" ng-click="insertForum()" class="btn btn-lg btn-info">Submit</button>					
-					</div>
-				</form> 
-		</div>
-	</div>
-</div>
+<form>
+ <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+            <h4>Add Forum</h4>
+            <input type="text" id="name"  ng-model="forum.forumName" class="form-control input-sm chat-input" placeholder="Forum Name" />
+            </br>
+            <input type="text" style="height: 2cm;" id="content" ng-model="forum.forumContent" class="form-control input-sm chat-input" placeholder="Forum Content" />
+            </br>
+            <div class="wrapper">
+            <span class="group-btn">     
+                
+            <button type="button" ng-click="insertForum()" class="btn btn-lg btn-info">Insert</button>
+            </span>
+            </div>
+            </div>
+        
+        </div>
+    </div>
+</form>
 
 </div>
